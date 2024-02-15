@@ -44,6 +44,8 @@ pyenv local 3.9.7
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
 export PATH="$HOME/.local/bin:$PATH"
 
+poetry env use 3.9.7
+
 # Install all python dependencies
 poetry install
 source .venv/bin/activate # or: poetry shell
