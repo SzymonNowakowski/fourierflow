@@ -49,6 +49,8 @@ pyenv install 3.10.7
 pyenv local 3.10.7
 curl -sSL https://install.python-poetry.org | python3 - --version 1.2.0b3
 
+poetry env use 3.10.7
+
 # Install all python dependencies
 poetry install
 source .venv/bin/activate # or: poetry shell
@@ -124,13 +126,13 @@ Training and test commands:
 
 ```sh
 # Reproducing SOA model on Navier Stokes from Li et al (2021).
-fourierflow train --trial 0 experiments/torus_li/zongyi/4_layers/config.yaml
+poetry run fourierflow train --trial 0 experiments/torus_li/zongyi/4_layers/config.yaml
 
 # Train with our best model
-fourierflow train --trial 0 experiments/torus_li/markov/24_layers/config.yaml
+poetry run fourierflow train --trial 0 experiments/torus_li/markov/24_layers/config.yaml
 
 # Get inference time on test set
-fourierflow predict --trial 0 experiments/torus_li/markov/24_layers/config.yaml
+poetry run fourierflow predict --trial 0 experiments/torus_li/markov/24_layers/config.yaml
 ```
 
 Visualization commands:
