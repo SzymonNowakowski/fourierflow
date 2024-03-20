@@ -132,6 +132,19 @@ poetry run fourierflow train --trial 0 experiments/torus_li/zongyi/4_layers/conf
 
 # Train with our best model
 poetry run fourierflow train --trial 0 experiments/torus_li/markov/24_layers/config.yaml
+# with checkpoints written to .../fourierflow/experiments/torus_li/markov/24_layers/checkpoints
+
+# Test the model
+poetry run fourierflow test --trial 0 experiments/torus_li/markov/24_layers/config.yaml
+### The run summary would be something like this:
+# Run summary:
+#wandb:                   epoch 0
+#wandb:               test_corr 0.99973
+#wandb:               test_loss 0.02374
+#wandb:           test_loss_avg 0.01797
+#wandb: test_reduced_time_until 10.0
+#wandb:         test_time_until 10.0
+#wandb:     trainer/global_step 0
 
 # Get inference time on test set
 poetry run fourierflow predict --trial 0 experiments/torus_li/markov/24_layers/config.yaml
