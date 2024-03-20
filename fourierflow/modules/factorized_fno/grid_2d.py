@@ -91,7 +91,7 @@ class SpectralConv2d(nn.Module):
         # x.shape == [batch_size, in_dim, grid_size, grid_size]
 
         # # Combining Dimensions # #
-        x = xx + xy
+        x = xx * xy
 
         x = rearrange(x, 'b i m n -> b m n i')
         # x.shape == [batch_size, grid_size, grid_size, out_dim]
