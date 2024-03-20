@@ -127,6 +127,8 @@ Training and test commands:
 ```sh
 # Reproducing SOA model on Navier Stokes from Li et al (2021).
 poetry run fourierflow train --trial 0 experiments/torus_li/zongyi/4_layers/config.yaml
+# with checkpoints written to .../fourierflow/experiments/torus_li/zongyi/4_layers/checkpoints
+
 
 # Train with our best model
 poetry run fourierflow train --trial 0 experiments/torus_li/markov/24_layers/config.yaml
